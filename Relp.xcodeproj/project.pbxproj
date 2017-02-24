@@ -16,6 +16,7 @@
 		2EE6F40D1E5FDF74003E9067 /* RelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6F40C1E5FDF74003E9067 /* RelpTests.swift */; };
 		2EE6F4181E5FDF74003E9067 /* RelpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6F4171E5FDF74003E9067 /* RelpUITests.swift */; };
 		2EE6F4261E5FE580003E9067 /* RestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6F4251E5FE580003E9067 /* RestaurantList.swift */; };
+		2EE6F4281E600D5B003E9067 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6F4271E600D5B003E9067 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2EE6F4171E5FDF74003E9067 /* RelpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelpUITests.swift; sourceTree = "<group>"; };
 		2EE6F4191E5FDF74003E9067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EE6F4251E5FE580003E9067 /* RestaurantList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantList.swift; sourceTree = "<group>"; };
+		2EE6F4271E600D5B003E9067 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				2EE6F4031E5FDF74003E9067 /* Info.plist */,
 				2EE6F3FB1E5FDF74003E9067 /* Relp.xcdatamodeld */,
 				2EE6F4251E5FE580003E9067 /* RestaurantList.swift */,
+				2EE6F4271E600D5B003E9067 /* Restaurant.swift */,
 			);
 			path = Relp;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE6F4281E600D5B003E9067 /* Restaurant.swift in Sources */,
 				2EE6F4261E5FE580003E9067 /* RestaurantList.swift in Sources */,
 				2EE6F3FD1E5FDF74003E9067 /* Relp.xcdatamodeld in Sources */,
 				2EE6F3F71E5FDF74003E9067 /* ViewController.swift in Sources */,
@@ -524,6 +528,7 @@
 				2EE6F41E1E5FDF74003E9067 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2EE6F41F1E5FDF74003E9067 /* Build configuration list for PBXNativeTarget "RelpTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +537,7 @@
 				2EE6F4211E5FDF74003E9067 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2EE6F4221E5FDF74003E9067 /* Build configuration list for PBXNativeTarget "RelpUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +546,7 @@
 				2EE6F4241E5FDF74003E9067 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
