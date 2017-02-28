@@ -16,8 +16,7 @@ class tabView: UIView {
         
         layer.cornerRadius = 10
         layer.masksToBounds = true
-        
-        
+
         }
     
 

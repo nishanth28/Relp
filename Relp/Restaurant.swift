@@ -18,11 +18,10 @@ class Restaurant: NSObject {
     var rating : Int?
     var price : Int?
     var website : URL?
-    var icon : String?
+   // var icon : String?
     
-    init(name : String, lat : Double, long : Double, address : String, open : Bool, rating : Int, price : Int, icon: String){
+    init(name : String, lat : Double, long : Double, address : String, open : Bool, rating : Int, price : Int){
         
-        self.icon = icon
         self.name = name
         self.lat = lat
         self.long = long
@@ -31,6 +30,7 @@ class Restaurant: NSObject {
         self.rating = rating
         self.price = price
         self.website = URL(string:"")
+        //self.icon = icon
         
     }
 
