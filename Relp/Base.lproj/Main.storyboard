@@ -32,11 +32,11 @@
                                             <rect key="frame" x="10" y="5" width="355" height="85.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-dA-nKh">
-                                                    <rect key="frame" x="94" y="8" width="41" height="21"/>
+                                                    <rect key="frame" x="94" y="8" width="36.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="4Hn-Iz-cS5"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -46,26 +46,35 @@
                                                         <constraint firstAttribute="height" constant="21" id="LCo-GS-2ca"/>
                                                         <constraint firstAttribute="width" constant="191" id="WKe-jJ-V0a"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rest.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-N6-0Mi">
-                                                    <rect key="frame" x="8" y="6" width="78" height="72"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JH-5f-FuE">
+                                                    <rect key="frame" x="326" y="32" width="21" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rest.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-N6-0Mi" customClass="tabImage" customModule="Relp">
+                                                    <rect key="frame" x="8" y="13" width="65" height="58"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="72" id="aj6-Kg-vN4"/>
-                                                        <constraint firstAttribute="width" constant="78" id="t7e-E8-0Ln"/>
+                                                        <constraint firstAttribute="height" constant="58" id="aj6-Kg-vN4"/>
+                                                        <constraint firstAttribute="width" constant="65" id="t7e-E8-0Ln"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="9JH-5f-FuE" secondAttribute="trailing" constant="8" id="6Sx-xY-ObU"/>
                                                 <constraint firstItem="OvY-N6-0Mi" firstAttribute="leading" secondItem="L8s-NO-9KL" secondAttribute="leadingMargin" id="N6R-68-CME"/>
-                                                <constraint firstItem="OvY-N6-0Mi" firstAttribute="top" secondItem="L8s-NO-9KL" secondAttribute="topMargin" constant="-2" id="ffK-jr-hKy"/>
+                                                <constraint firstItem="9JH-5f-FuE" firstAttribute="top" secondItem="L8s-NO-9KL" secondAttribute="top" constant="32" id="U6g-Vg-j1l"/>
+                                                <constraint firstItem="OvY-N6-0Mi" firstAttribute="top" secondItem="L8s-NO-9KL" secondAttribute="topMargin" constant="5" id="ffK-jr-hKy"/>
                                                 <constraint firstItem="Sol-38-TkU" firstAttribute="top" secondItem="2Bf-dA-nKh" secondAttribute="bottom" constant="8" id="iVO-Mk-Hpo"/>
                                                 <constraint firstItem="2Bf-dA-nKh" firstAttribute="top" secondItem="L8s-NO-9KL" secondAttribute="topMargin" id="oFM-Kr-yX9"/>
-                                                <constraint firstItem="Sol-38-TkU" firstAttribute="leading" secondItem="OvY-N6-0Mi" secondAttribute="trailing" constant="8" id="pOl-GU-H34"/>
-                                                <constraint firstItem="2Bf-dA-nKh" firstAttribute="leading" secondItem="OvY-N6-0Mi" secondAttribute="trailing" constant="8" id="sNg-6w-Koa"/>
+                                                <constraint firstItem="Sol-38-TkU" firstAttribute="leading" secondItem="OvY-N6-0Mi" secondAttribute="trailing" constant="21" id="pOl-GU-H34"/>
+                                                <constraint firstItem="2Bf-dA-nKh" firstAttribute="leading" secondItem="OvY-N6-0Mi" secondAttribute="trailing" constant="21" id="sNg-6w-Koa"/>
+                                                <constraint firstAttribute="bottom" secondItem="9JH-5f-FuE" secondAttribute="bottom" constant="32.5" id="w9t-kC-rMC"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -81,6 +90,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="distance" destination="9JH-5f-FuE" id="GvB-Xd-67z"/>
                                     <outlet property="name" destination="2Bf-dA-nKh" id="ZXT-pd-utt"/>
                                     <outlet property="price" destination="Sol-38-TkU" id="Kfl-nF-oki"/>
                                     <outlet property="relpImage" destination="OvY-N6-0Mi" id="w2W-Wh-rNj"/>

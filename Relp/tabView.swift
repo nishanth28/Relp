@@ -22,6 +22,22 @@ class tabView: UIView {
 
 }
 
+class tabImage: UIImageView {
+    
+    
+    override func draw(_ rect: CGRect) {
+        
+        layer.cornerRadius = 50
+        layer.masksToBounds = true
+        
+        //layer.clipsT
+        
+    }
+    
+    
+}
+
+
 class mapView: MKMapView {
     
     override func draw(_ rect: CGRect) {

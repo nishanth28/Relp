@@ -14,7 +14,7 @@ class RestTableCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var relpImage: UIImageView!
     @IBOutlet weak var price: UILabel!
-    
+    @IBOutlet weak var distance: UILabel!
     @IBOutlet weak var tabAlterView: tabView!
     
     

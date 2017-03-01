@@ -7,29 +7,25 @@
 //
 
 import UIKit
+import MapKit
 
-class RestaurantList: UITableViewController {
+class RestaurantList: UITableViewController, CLLocationManagerDelegate {
 
 
     let identifer : String = "relpCell"
-    let API : String = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.7128,-74.0059&radius=500&types=food&name=restaurant&key=AIzaSyAZzPfNO8KSatKBRCYaFUjL8WwdcX-ugbk"
+    var locManager : CLLocationManager = CLLocationManager()
     
-    var restaurants:[Restaurant] = [Restaurant]()
+    var userLocation : CLLocation?
+    var API : String?
+    
+    var restaurants: [Restaurant] = [Restaurant]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addGeoLoc()
         
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "Rest2.jpg"))
         self.title = "Relp"
-        restaurantAPI(API) { (array) in
-           
-            self.restaurants = array
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }
-
-        }
-        
     
         
     }
@@ -46,7 +42,44 @@ class RestaurantList: UITableViewController {
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         locManager.requestAlwaysAuthorization()
         locManager.startUpdatingLocation()
-        mapView.showsUserLocation = true
+    }
+    
+    func calcDistance(_ lat:Double,_ long:Double) -> String {
+        
+        var distanceString : String?
+        var distance : CLLocationDistance?
+        
+        let restaurantLocation = CLLocation(latitude:lat,longitude:long)
+        distance = userLocation?.distance(from: restaurantLocation)
+        
+        let dist = NSString(format: "%.2f",(distance!/1000))
+        distanceString = String(dist)
+        
+        return distanceString!
+        
+        
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        
+        let location = locations[0]
+        userLocation = location
+        
+        let lat = location.coordinate.latitude
+        let long = location.coordinate.longitude
+        
+        API = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(long)&radius=5000&types=food&name=restaurant&key=AIzaSyAZzPfNO8KSatKBRCYaFUjL8WwdcX-ugbk"
+        
+        restaurantAPI(API!) { (array) in
+            
+            self.restaurants = array
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
+            
+        }
+
         
     }
 
@@ -65,17 +98,17 @@ class RestaurantList: UITableViewController {
         return restaurants.count
     }
 
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifer , for: indexPath) as! RestTableCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifer , for: indexPath) as! RestTableCell
         let restaurant = restaurants[indexPath.row]
+        
         cell.tabAlterView?.backgroundColor = UIColor(red: 138.0/255.0, green: 215.0/255.0, blue: 203.0/255.0, alpha: 1.0)
-            
         cell.relpImage.image = UIImage(named:"Rest.jpg")
         cell.name.text = restaurant.name
         cell.price.text = price(price:restaurant.price!)
-    
-
+        cell.distance.text = calcDistance(restaurant.lat!,restaurant.long!) + " Km"
+  
         return cell
             
     }
