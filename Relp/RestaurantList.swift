@@ -108,7 +108,9 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         cell.name.text = restaurant.name
         cell.price.text = price(price:restaurant.price!)
         cell.distance.text = calcDistance(restaurant.lat!,restaurant.long!) + " Km"
-  
+        cell.selectionStyle = .none
+        
+        
         return cell
             
     }

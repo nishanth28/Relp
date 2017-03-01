@@ -22,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var restaurant: Restaurant?
     var locManager : CLLocationManager = CLLocationManager()
+    var userlocation : CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,5 +126,68 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
 
+}
+
+extension ViewController : MKMapViewDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        userlocation = locations.first
+        route()
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let render = MKPolylineRenderer(overlay:overlay)
+        render.strokeColor = UIColor.blue
+        render.lineWidth = 1.0
+        
+        return render
+        
+    }
+    
+    
+    
+    func route(){
+        
+        if userlocation != nil{
+            let srcLocation = CLLocation(latitude:userlocation!.coordinate.latitude, longitude: userlocation!.coordinate.longitude)
+            let destLocation = CLLocation(latitude: restaurant!.lat!,longitude:restaurant!.long!)
+            
+            let srcPlaceMark = MKPlacemark(coordinate:srcLocation.coordinate,addressDictionary: nil)
+            let destPlaceMark = MKPlacemark(coordinate:destLocation.coordinate,addressDictionary: nil)
+            
+            let region = MKCoordinateRegionMakeWithDistance(srcLocation.coordinate, 15000, 15000)
+            
+            mapView.delegate = self
+            
+            let request = MKDirectionsRequest()
+            request.source = MKMapItem(placemark:srcPlaceMark)
+            request.destination = MKMapItem(placemark:destPlaceMark)
+            request.requestsAlternateRoutes = false
+            request.transportType = .automobile
+            
+            let directions = MKDirections(request: request)
+            directions.calculate(completionHandler: { (response , error) in
+                
+                if error == nil {
+                    
+                    for route in response!.routes {
+                        
+                        self.mapView.add(route.polyline)
+                        
+                    } //for
+                    
+                }else{
+                    print("Error MapExtension")
+                } //if
+                
+            })
+            
+            
+            
+        }
+        
+    }
 }
 

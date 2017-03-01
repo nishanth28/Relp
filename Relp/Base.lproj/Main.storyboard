@@ -125,7 +125,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uae-X2-azG" customClass="mapView" customModule="Relp" customModuleProvider="target">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uae-X2-azG" customClass="mapView" customModule="Relp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="395" width="343" height="252"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="252" id="cze-FV-Ybe"/>
