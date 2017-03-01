@@ -33,10 +33,24 @@ class RestaurantList: UITableViewController {
     
         
     }
-        override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    
+    
+    func addGeoLoc(){
+        
+        locManager.delegate = self
+        locManager.desiredAccuracy = kCLLocationAccuracyBest
+        locManager.requestAlwaysAuthorization()
+        locManager.startUpdatingLocation()
+        mapView.showsUserLocation = true
+        
+    }
+
+    
 
     // MARK: - Table view data source
 
@@ -56,10 +70,6 @@ class RestaurantList: UITableViewController {
         
         let restaurant = restaurants[indexPath.row]
         cell.tabAlterView?.backgroundColor = UIColor(red: 138.0/255.0, green: 215.0/255.0, blue: 203.0/255.0, alpha: 1.0)
-
-            
-        //let url = NSURL(string: "\(restaurant.icon)")
-        //let data = NSData(contentsOf: url as! URL)
             
         cell.relpImage.image = UIImage(named:"Rest.jpg")
         cell.name.text = restaurant.name
@@ -165,8 +175,6 @@ extension RestaurantList{
                             let address = restaurant["vicinity"] as! String
                             let rating = restaurant["rating"] as? Int ?? 0
                             let price = restaurant["price_level"] as? Int ?? 5
-                            
-                            print(icon)
                             
                             DispatchQueue.main.async {
                                 let newRestaurant = Restaurant(name:name, lat:latitude, long:longitude, address:address, open:openNow, rating:rating, price:price)
