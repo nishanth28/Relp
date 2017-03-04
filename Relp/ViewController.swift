@@ -23,11 +23,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var restaurant: Restaurant?
     var locManager : CLLocationManager = CLLocationManager()
     var userlocation : CLLocation?
+    var dist : String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = restaurant!.name
+        self.navigationController?.navigationBar.backgroundColor = UIColor.brown
         addMap()
         displayDetails()
         addGeoLoc()
@@ -69,7 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func displayDetails(){
         
         name.text = restaurant!.name
-        distance.text = "..KM"
+        distance.text = self.dist!
         displayOpen(openDisp: restaurant!.open!)
         rating.text = displayRating(rating: restaurant!.rating!)
         

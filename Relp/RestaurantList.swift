@@ -19,6 +19,8 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
     var API : String?
     
     var restaurants: [Restaurant] = [Restaurant]()
+    var distance: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -103,11 +105,13 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifer , for: indexPath) as! RestTableCell
         let restaurant = restaurants[indexPath.row]
         
-        cell.tabAlterView?.backgroundColor = UIColor(red: 138.0/255.0, green: 215.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        cell.tabAlterView?.backgroundColor = UIColor(red: 205.0/255.0, green: 198.0/255.0, blue: 192.0/255.0, alpha: 1.0)
         cell.relpImage.image = UIImage(named:"Rest.jpg")
         cell.name.text = restaurant.name
         cell.price.text = price(price:restaurant.price!)
         cell.distance.text = calcDistance(restaurant.lat!,restaurant.long!) + " Km"
+        self.distance = calcDistance(restaurant.lat!,restaurant.long!) + " Km"
+
         cell.selectionStyle = .none
         
         
@@ -157,6 +161,7 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
             let index = indexPath!.row
             let restaurantSelected = restaurants[index]
             
+            viewVC.dist = self.distance
             viewVC.restaurant = restaurantSelected
             
         }
