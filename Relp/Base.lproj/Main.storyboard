@@ -99,9 +99,6 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="nil" keyPath=""/>
-                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="G5f-h8-KNz" id="Je4-Al-YU8"/>
                             <outlet property="delegate" destination="G5f-h8-KNz" id="tc4-7x-PGa"/>
@@ -267,7 +264,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gJt-lP-eG2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="36J-lb-0TM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="36J-lb-0TM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.49180740118026733" green="0.57770252227783203" blue="0.52418714761734009" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

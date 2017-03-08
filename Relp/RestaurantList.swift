@@ -25,10 +25,8 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         addGeoLoc()
-        
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "Rest2.jpg"))
         self.title = "Relp"
-    
+        
         
     }
     override func didReceiveMemoryWarning() {
@@ -44,6 +42,7 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         locManager.requestAlwaysAuthorization()
         locManager.startUpdatingLocation()
+        
     }
     
     func calcDistance(_ lat:Double,_ long:Double) -> String {
@@ -76,6 +75,7 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         restaurantAPI(API!) { (array) in
             
             self.restaurants = array
+            
             DispatchQueue.main.async{
                 self.tableView.reloadData()
             }

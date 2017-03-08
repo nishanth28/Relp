@@ -92,6 +92,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EAB78401E6FC5650059B234 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EE6F4271E600D5B003E9067 /* Restaurant.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2EAB78411E6FC56D0059B234 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EC907F81E60E674000164ED /* tabView.swift */,
+				2EE6F42F1E60CA55003E9067 /* RestTableCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2EAB78421E6FC5790059B234 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2EE6F4251E5FE580003E9067 /* RestaurantList.swift */,
+				2EE6F3F61E5FDF74003E9067 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2EAB78431E6FC5C50059B234 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2EAB783E1E6A1AD10059B234 /* Relp_BG4.jpg */,
+				2EAB783C1E6A19690059B234 /* Relp_BG2.jpg */,
+				2EAB783A1E6A13420059B234 /* BG_Relp.jpg */,
+				2EE6F4291E602765003E9067 /* Rest.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		2EE6F3E81E5FDF74003E9067 = {
 			isa = PBXGroup;
 			children = (
@@ -115,21 +152,16 @@
 		2EE6F3F31E5FDF74003E9067 /* Relp */ = {
 			isa = PBXGroup;
 			children = (
+				2EAB78431E6FC5C50059B234 /* Resources */,
+				2EAB78421E6FC5790059B234 /* Controller */,
+				2EAB78411E6FC56D0059B234 /* View */,
+				2EAB78401E6FC5650059B234 /* Model */,
 				2EE6F3F41E5FDF74003E9067 /* AppDelegate.swift */,
-				2EE6F3F61E5FDF74003E9067 /* ViewController.swift */,
 				2EE6F3F81E5FDF74003E9067 /* Main.storyboard */,
 				2EE6F3FE1E5FDF74003E9067 /* Assets.xcassets */,
 				2EE6F4001E5FDF74003E9067 /* LaunchScreen.storyboard */,
-				2EE6F4291E602765003E9067 /* Rest.jpg */,
 				2EE6F4031E5FDF74003E9067 /* Info.plist */,
-				2EAB783E1E6A1AD10059B234 /* Relp_BG4.jpg */,
-				2EAB783A1E6A13420059B234 /* BG_Relp.jpg */,
 				2EE6F3FB1E5FDF74003E9067 /* Relp.xcdatamodeld */,
-				2EE6F4251E5FE580003E9067 /* RestaurantList.swift */,
-				2EAB783C1E6A19690059B234 /* Relp_BG2.jpg */,
-				2EE6F4271E600D5B003E9067 /* Restaurant.swift */,
-				2EE6F42F1E60CA55003E9067 /* RestTableCell.swift */,
-				2EC907F81E60E674000164ED /* tabView.swift */,
 			);
 			path = Relp;
 			sourceTree = "<group>";
