@@ -20,10 +20,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var open: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var restImage: ResImage!
+    
+    
+    
     var restaurant: Restaurant?
     var locManager : CLLocationManager = CLLocationManager()
     var userlocation : CLLocation?
     var dist : String?
+    var rImage : String?
     
     
     override func viewDidLoad() {
@@ -31,11 +36,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         self.title = restaurant!.name
         self.navigationController?.navigationBar.backgroundColor = UIColor.brown
+    
+        
         addMap()
         displayDetails()
         addGeoLoc()
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func addMap(){
@@ -73,6 +79,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         name.text = restaurant!.name
         distance.text = self.dist!
+        restImage.image = UIImage(named:"\(rImage!)")
         displayOpen(openDisp: restaurant!.open!)
         rating.text = displayRating(rating: restaurant!.rating!)
         

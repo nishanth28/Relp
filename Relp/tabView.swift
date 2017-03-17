@@ -25,15 +25,27 @@ class tabView: UIView {
 class tabImage: UIImageView {
     
     
-    override func draw(_ rect: CGRect) {
+    override func awakeFromNib() {
         
-        layer.cornerRadius = 50
+        layer.cornerRadius = frame.height/2
         layer.masksToBounds = true
-        
-        //layer.clipsT
+
         
     }
+        
+}
+
+
+class ResImage: UIImageView {
     
+    
+    override func awakeFromNib() {
+        
+        layer.cornerRadius = 20
+        layer.masksToBounds = true
+        
+        
+    }
     
 }
 

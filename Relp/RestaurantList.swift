@@ -19,6 +19,7 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
     var API : String?
     
     var restaurants: [Restaurant] = [Restaurant]()
+    var resImage: [String] = ["Res2.jpeg","Res3.jpg","Res4.jpg","Res6.jpg","Res8.jpeg","Res9.jpeg","Res10.jpeg","restaurant1.jpg"]
     var distance: String?
     
     override func viewDidLoad() {
@@ -67,12 +68,16 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         let location = locations[0]
         userLocation = location
         
+        locManager.stopUpdatingLocation()
+        
         let lat = location.coordinate.latitude
         let long = location.coordinate.longitude
         
-        API = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(long)&radius=5000&types=food&name=restaurant&key=AIzaSyAZzPfNO8KSatKBRCYaFUjL8WwdcX-ugbk"
+        DispatchQueue.global(qos:.background).async
+        {
+        self.API = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(long)&radius=5000&types=food&name=restaurant&key=AIzaSyAZzPfNO8KSatKBRCYaFUjL8WwdcX-ugbk"
         
-        restaurantAPI(API!) { (array) in
+            self.restaurantAPI(self.API!) { (array) in
             
             self.restaurants = array
             
@@ -80,8 +85,8 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
                 self.tableView.reloadData()
             }
             
+           }
         }
-
         
     }
 
@@ -105,8 +110,12 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifer , for: indexPath) as! RestTableCell
         let restaurant = restaurants[indexPath.row]
         
-        cell.tabAlterView?.backgroundColor = UIColor(red: 205.0/255.0, green: 198.0/255.0, blue: 192.0/255.0, alpha: 1.0)
-        cell.relpImage.image = UIImage(named:"Rest.jpg")
+        let mod = indexPath.row % 8
+        
+        let restImage = resImage[mod]
+        
+        cell.tabAlterView?.backgroundColor = UIColor(red: 255.0/255.0, green: 132.0/255.0, blue: 124.0/255.0, alpha: 1.0)
+        cell.relpImage.image = UIImage(named:"\(restImage)")
         cell.name.text = restaurant.name
         cell.price.text = price(price:restaurant.price!)
         cell.distance.text = calcDistance(restaurant.lat!,restaurant.long!) + " Km"
@@ -160,9 +169,11 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
             let indexPath = tableView.indexPathForSelectedRow
             let index = indexPath!.row
             let restaurantSelected = restaurants[index]
+            let modulus = index % 8
             
             viewVC.dist = self.distance
             viewVC.restaurant = restaurantSelected
+            viewVC.rImage = self.resImage[modulus]
             
         }
         
