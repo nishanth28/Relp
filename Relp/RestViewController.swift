@@ -22,6 +22,8 @@ class RestViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        coursalEffectCalculation()
+        
     }
 
     
@@ -51,19 +53,42 @@ class RestViewController: UIViewController, UICollectionViewDataSource, UICollec
     func coursalEffectCalculation(){
         
         let screenSize = UIScreen.main.bounds.size
-        let cellScaling = 1.0
+        let cellScaling : CGFloat = 0.6
         let cellWidth = floor(screenSize.width * cellScaling)
         let cellHeight = floor(screenSize.height * cellScaling)
 
         let insetX = (view.bounds.width - cellWidth)/2.0
         let insetY = (view.bounds.height - cellHeight)/2.0
         
-        let layout = restCollectionView!.collectionViewLayout as! UICollectionViewLayout
-        layout.itemsize = CGSize(width: cellWidth , height:cellHeight)
+        let layout = restCollectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: cellWidth , height:cellHeight)
         restCollectionView?.contentInset = UIEdgeInsets(top:insetY,left:insetX,bottom: insetY, right:insetX)
         
     }
     
 
    
+}
+
+
+extension RestViewController : UIScrollViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let layout = self.restCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludedSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludedSpacing
+        let roundedIndex = round(index)
+        
+        offset = CGPoint(x:roundedIndex * cellWidthIncludedSpacing - scrollView.contentInset.left, y:-scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
+        
+        
+        
+        
+    }
+        
+    
+    
 }

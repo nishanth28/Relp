@@ -50,7 +50,7 @@ class RestCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 2
         layer.shadowOpacity = 0.8
         layer.shadowOffset = CGSize(width: 5, height: 10)
-        
+        bgColor.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         self.clipsToBounds = false
         
     }
