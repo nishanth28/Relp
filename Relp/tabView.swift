@@ -9,21 +9,86 @@
 import UIKit
 import MapKit
 
-class tabView: UIView {
-
+@IBDesignable class tabView: UIView {
     
-    override func draw(_ rect: CGRect) {
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
         
-        layer.cornerRadius = 10
-        layer.masksToBounds = true
-
+        didSet{
+            
+            layer.borderColor = borderColor.cgColor
+            
         }
+        
+    }
     
-
+    @IBInspectable var borderWidth : CGFloat = 0 {
+        
+        didSet{
+            
+            layer.borderWidth = borderWidth
+            
+        }
+        
+        
+    }
+    
+    @IBInspectable var cornerRadius : CGFloat = 0 {
+        
+        didSet{
+            
+            layer.cornerRadius = cornerRadius
+            
+        }
+        
+    }
+    
+    @IBInspectable var maskToBounds : Bool = true {
+        
+        didSet{
+            
+            layer.masksToBounds = maskToBounds
+            
+        }
+        
+    }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    
+        
+        
+    }
+   
 }
 
-class tabImage: UIImageView {
+@IBDesignable class tabImage: UIImageView {
     
+    
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        
+        didSet{
+            
+            layer.borderColor = borderColor.cgColor
+            
+        }
+        
+    }
+    
+    @IBInspectable var borderWidth : CGFloat = 0 {
+        
+        didSet{
+            
+            layer.borderWidth = borderWidth
+            
+        }
+        
+        
+    }
+    
+
     
     override func awakeFromNib() {
         
@@ -36,8 +101,28 @@ class tabImage: UIImageView {
 }
 
 
-class ResImage: UIImageView {
+@IBDesignable class ResImage: UIImageView {
     
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        
+        didSet{
+            
+            layer.borderColor = borderColor.cgColor
+            
+        }
+        
+    }
+    
+    @IBInspectable var borderWidth : CGFloat = 0 {
+        
+        didSet{
+            
+            layer.borderWidth = borderWidth
+            
+        }
+        
+        
+    }
     
     override func awakeFromNib() {
         
@@ -50,7 +135,29 @@ class ResImage: UIImageView {
 }
 
 
-class mapView: MKMapView {
+@IBDesignable class mapView: MKMapView {
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        
+        didSet{
+            
+            layer.borderColor = borderColor.cgColor
+            
+        }
+        
+    }
+    
+    @IBInspectable var borderWidth : CGFloat = 0 {
+        
+        didSet{
+            
+            layer.borderWidth = borderWidth
+            
+        }
+        
+        
+    }
+
     
     override func draw(_ rect: CGRect) {
         
