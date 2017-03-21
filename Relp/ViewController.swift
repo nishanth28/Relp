@@ -167,7 +167,7 @@ extension ViewController : MKMapViewDelegate {
             let srcPlaceMark = MKPlacemark(coordinate:srcLocation.coordinate,addressDictionary: nil)
             let destPlaceMark = MKPlacemark(coordinate:destLocation.coordinate,addressDictionary: nil)
             
-            let region = MKCoordinateRegionMakeWithDistance(srcLocation.coordinate, 1500, 1500)
+            _ = MKCoordinateRegionMakeWithDistance(srcLocation.coordinate, 1500, 1500)
             
             mapView.delegate = self
             

@@ -15,33 +15,33 @@ class RestCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var restInformation: UILabel!
     @IBOutlet weak var bgColor: UIView!
     
-    var restaurant : Restaurant? {
-        
-        didSet{
-            self.updateUI()
-        }
-        
-    }
-    
-    
-    private func updateUI()
-    {
-        if let restaurant = restaurant {
-            
-            featuredImageView.image = UIImage(named: "Rest.jpg")
-            restInformation.text = "Pizza Hut"
-            bgColor.backgroundColor = UIColor.red
-        }
-        else
-        {
-            featuredImageView.image = nil
-            restInformation.text = nil
-            bgColor.backgroundColor = nil
-            
-        }
-        
-    
-    }
+//    var restaurant : Restaurant? {
+//        
+//        didSet{
+//            self.updateUI()
+//        }
+//        
+//    }
+//    
+//
+//    private func updateUI()
+//    {
+//        if let restaurant = restaurant {
+//            
+//            featuredImageView.image = UIImage(named: "Rest.jpg")
+//            restInformation.text = "Pizza Hut"
+//            bgColor.backgroundColor = UIColor.red
+//        }
+//        else
+//        {
+//            featuredImageView.image = nil
+//            restInformation.text = nil
+//            bgColor.backgroundColor = nil
+//            
+//        }
+//        
+//    
+//    }
     
     override func layoutSubviews() {
         super.layoutSubviews()

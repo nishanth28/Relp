@@ -114,7 +114,7 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         
         let restImage = resImage[mod]
         
-        cell.tabAlterView?.backgroundColor = UIColor(red: 255.0/255.0, green: 132.0/255.0, blue: 124.0/255.0, alpha: 1.0)
+        //cell.tabAlterView?.backgroundColor = UIColor(red: 255.0/255.0, green: 132.0/255.0, blue: 124.0/255.0, alpha: 1.0)
         cell.relpImage.image = UIImage(named:"\(restImage)")
         cell.name.text = restaurant.name
         cell.price.text = price(price:restaurant.price!)
@@ -191,7 +191,6 @@ extension RestaurantList{
         
         var restArray : [Restaurant] = [Restaurant]()
         var openNow:Bool = false
-        var icon : String = ""
         
         let url = URL(string:urlString)
         let urlSessionTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -207,11 +206,6 @@ extension RestaurantList{
                         for restaurantType in reslist{
                             
                             let restaurant = restaurantType as! NSDictionary
-                            if let iconCheck = restaurant["icon"] as? String{
-                                
-                                icon = iconCheck
-                                
-                            }
                             let name = restaurant["name"] as! String
                             let geometry = restaurant["geometry"] as! NSDictionary
                             

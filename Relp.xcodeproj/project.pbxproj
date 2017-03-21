@@ -34,6 +34,7 @@
 		2EE6F4281E600D5B003E9067 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6F4271E600D5B003E9067 /* Restaurant.swift */; };
 		2EE6F42A1E602765003E9067 /* Rest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EE6F4291E602765003E9067 /* Rest.jpg */; };
 		2EE6F4301E60CA55003E9067 /* RestTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6F42F1E60CA55003E9067 /* RestTableCell.swift */; };
+		2EFEF4341E8085570081B322 /* faceImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2EFEF4331E8085570081B322 /* faceImage.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		2EE6F4271E600D5B003E9067 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		2EE6F4291E602765003E9067 /* Rest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Rest.jpg; sourceTree = "<group>"; };
 		2EE6F42F1E60CA55003E9067 /* RestTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestTableCell.swift; sourceTree = "<group>"; };
+		2EFEF4331E8085570081B322 /* faceImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = faceImage.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				2EAB783C1E6A19690059B234 /* Relp_BG2.jpg */,
 				2EAB783A1E6A13420059B234 /* BG_Relp.jpg */,
 				2EE6F4291E602765003E9067 /* Rest.jpg */,
+				2EFEF4331E8085570081B322 /* faceImage.jpeg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				2E7C758D1E7B6B3B0051CA19 /* Res2.jpeg in Resources */,
 				2E7C75941E7B6B3B0051CA19 /* Res11.jpg in Resources */,
 				2E7C75901E7B6B3B0051CA19 /* Res6.jpg in Resources */,
+				2EFEF4341E8085570081B322 /* faceImage.jpeg in Resources */,
 				2E7C75931E7B6B3B0051CA19 /* Res10.jpeg in Resources */,
 				2E7C758E1E7B6B3B0051CA19 /* Res3.jpg in Resources */,
 				2EAB783B1E6A13420059B234 /* BG_Relp.jpg in Resources */,

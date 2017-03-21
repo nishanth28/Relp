@@ -11,6 +11,13 @@ import MapKit
 
 @IBDesignable class tabView: UIView {
     
+    @IBInspectable var fillColor : UIColor = UIColor.clear {
+        
+        didSet {
+            layer.backgroundColor = fillColor.cgColor
+        }
+        
+    }
     
     @IBInspectable var borderColor: UIColor = UIColor.clear{
         
@@ -57,7 +64,7 @@ import MapKit
     override func awakeFromNib() {
         super.awakeFromNib()
     
-        
+        layer.backgroundColor = UIColor(red: 178/255, green: 223/255, blue: 219/255, alpha: 1.0).cgColor
         
     }
    
