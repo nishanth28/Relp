@@ -7,4 +7,5 @@ Helps finding Restaurants near you!
 
 ## App Screenshots
 
-soon
+
+![relptable1x](https://cloud.githubusercontent.com/assets/11078225/24181314/98613c06-0e90-11e7-9a64-4240dac39915.png)  ![relpinfo1x](https://cloud.githubusercontent.com/assets/11078225/24181244/2ee7f030-0e90-11e7-9fc9-cc7db711795d.png)
