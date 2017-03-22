@@ -264,12 +264,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xJ-QR-ZAa">
+                                <rect key="frame" x="313" y="535" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Laa-KQ-pne"/>
+                                    <constraint firstAttribute="width" constant="30" id="SR6-CV-iic"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ZoomOut"/>
+                                <connections>
+                                    <action selector="zoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="et5-6q-UhB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDr-JE-Alx">
+                                <rect key="frame" x="313" y="497" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nCB-Qt-azY"/>
+                                    <constraint firstAttribute="width" constant="30" id="zeD-55-kgc"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ZoomIn"/>
+                                <connections>
+                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x4d-DS-Ck5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87843137250000003" green="0.94901960780000005" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DPy-zq-vpD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="5XO-VL-7vB"/>
+                            <constraint firstItem="3xJ-QR-ZAa" firstAttribute="top" secondItem="vDr-JE-Alx" secondAttribute="bottom" constant="8" id="7Xd-Rv-HHS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vDr-JE-Alx" secondAttribute="trailing" constant="16" id="7vI-cg-xty"/>
                             <constraint firstItem="xFd-xz-jZD" firstAttribute="top" secondItem="kt0-dw-FKa" secondAttribute="bottom" constant="8" id="Aph-u0-F3l"/>
+                            <constraint firstItem="3xJ-QR-ZAa" firstAttribute="leading" secondItem="uae-X2-azG" secondAttribute="trailing" constant="-46" id="G4R-9P-2Lq"/>
                             <constraint firstItem="xFd-xz-jZD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="J3z-yV-drx"/>
+                            <constraint firstItem="3xJ-QR-ZAa" firstAttribute="top" secondItem="uae-X2-azG" secondAttribute="bottom" constant="-48" id="Ppz-X3-rjI"/>
                             <constraint firstItem="uae-X2-azG" firstAttribute="top" secondItem="xFd-xz-jZD" secondAttribute="bottom" constant="48" id="ViO-Mu-Xbg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uae-X2-azG" secondAttribute="bottom" constant="20" id="Yh5-R1-19b"/>
                             <constraint firstAttribute="trailing" secondItem="uae-X2-azG" secondAttribute="trailing" constant="16" id="aUg-Nm-wl6"/>
@@ -430,6 +456,8 @@
         <image name="Header" width="320" height="891"/>
         <image name="Res9.jpeg" width="275" height="184"/>
         <image name="Rest.jpg" width="1920" height="1280"/>
+        <image name="ZoomIn" width="260" height="243"/>
+        <image name="ZoomOut" width="260" height="243"/>
         <image name="restaurant1.jpg" width="550" height="362"/>
     </resources>
 </document>

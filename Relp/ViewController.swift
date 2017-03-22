@@ -22,6 +22,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var restImage: ResImage!
     
+    @IBAction func zoomIn(_ sender: Any) {
+        
+        mapView.setZoomByDelta(delta: 0.5, animated: true)
+        
+    }
+    
+    @IBAction func zoomOut(_ sender: Any) {
+        
+        mapView.setZoomByDelta(delta: 2 , animated: true)
+        
+    }
     
     
     var restaurant: Restaurant?
@@ -198,6 +209,23 @@ extension ViewController : MKMapViewDelegate {
             
         }
         
+    }
+}
+
+extension MKMapView {
+    
+    // delta is the zoom factor
+    // 2 will zoom out x2
+    // .5 will zoom in by x2
+    
+    func setZoomByDelta(delta: Double, animated: Bool) {
+        var _region = region;
+        var _span = region.span;
+        _span.latitudeDelta *= delta;
+        _span.longitudeDelta *= delta;
+        _region.span = _span;
+        
+        setRegion(_region, animated: animated)
     }
 }
 
