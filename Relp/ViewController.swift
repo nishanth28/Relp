@@ -89,7 +89,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func displayDetails(){
         
         name.text = restaurant!.name
-        distance.text = self.dist!
+        distance.text = self.dist
         restImage.image = UIImage(named:"\(rImage!)")
         displayOpen(openDisp: restaurant!.open!)
         rating.text = displayRating(rating: restaurant!.rating!)
@@ -213,10 +213,6 @@ extension ViewController : MKMapViewDelegate {
 }
 
 extension MKMapView {
-    
-    // delta is the zoom factor
-    // 2 will zoom out x2
-    // .5 will zoom in by x2
     
     func setZoomByDelta(delta: Double, animated: Bool) {
         var _region = region;

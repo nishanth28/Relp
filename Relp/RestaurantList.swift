@@ -20,7 +20,8 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
     
     var restaurants: [Restaurant] = [Restaurant]()
     var resImage: [String] = ["Res2.jpeg","Res3.jpg","Res4.jpg","Res6.jpg","Res8.jpeg","Res9.jpeg","Res10.jpeg","restaurant1.jpg"]
-    var distance: String?
+    
+    var dista: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,8 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         
         let dist = NSString(format: "%.2f",(distance!/1000))
         distanceString = String(dist)
+        
+        self.dista = distanceString
         
         return distanceString!
         
@@ -119,7 +122,7 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
         cell.name.text = restaurant.name
         cell.price.text = price(price:restaurant.price!)
         cell.distance.text = calcDistance(restaurant.lat!,restaurant.long!) + " Km"
-        self.distance = calcDistance(restaurant.lat!,restaurant.long!) + " Km"
+        self.dista = calcDistance(restaurant.lat!,restaurant.long!) + " Km"
 
         cell.selectionStyle = .none
         
@@ -171,7 +174,8 @@ class RestaurantList: UITableViewController, CLLocationManagerDelegate {
             let restaurantSelected = restaurants[index]
             let modulus = index % 8
             
-            viewVC.dist = self.distance
+            
+            viewVC.dist=calcDistance(restaurantSelected.lat!,restaurantSelected.long!) + " Km"
             viewVC.restaurant = restaurantSelected
             viewVC.rImage = self.resImage[modulus]
             
